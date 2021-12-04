@@ -1,3 +1,4 @@
+const DEFAULT_GRID = 16;
 let _grid = 16;
 let _color;
 
@@ -7,7 +8,7 @@ const checkbox = document.querySelector('#rainbow');
 
 button.addEventListener('click', () => {
     let newGrid = prompt("How many squares per side?");
-    _grid = newGrid;
+    (!isNaN(newGrid) && newGrid <= 100) ? _grid = newGrid : _grid = DEFAULT_GRID;
 
     CreateGrid(_grid);
 })
